@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<title>Cadastro novo</title>
+</head>
+<body>
+  <div class="container">
+    <div class="mt-4">Novo Funcionário</div>
+    <div class="card mt-3">
+      <form th:object="${requisicaoNovoFuncionario}" class="row g-3 mr-4" method="POST" action="/funcionario/novoFun">
+      
+        <div class="col-12 mt-4 ">
+          <label for"nome" class="form-label">Nome completo<span class="text-danger"> *</span></label>
+          <input th:field="*{nome}" th:errorclass="is-invalid" type="text" class="form-control" />
+	        <div th:errors="*{nome}" class="invalid-feedback" >
+	           Campo em branco
+	        </div>
+        </div>
+        
+        <div class="col-12 mt-4">
+          <label for"cpf" class="form-label">CPF<span class="text-danger"> *</span></label>
+          <input th:field="*{cpf}" th:errorclass="is-invalid" type="text" class="form-control" />
+	        <div th:errors="*{cpf}" class="invalid-feedback" >
+	           Campo em branco
+	        </div>
+        </div>        
+
+        <div class="col-6 mt-4">
+          <label for"rg" class="form-label">RG<span class="text-danger"> *</span></label>
+          <input th:field="*{rg}" th:errorclass="is-invalid" type="text" class="form-control" />
+	        <div th:errors="*{rg}" class="invalid-feedback" >
+	           Campo em branco
+	        </div>          
+        </div>        
+        
+        <div class="col-6 mt-4">
+          <label for"orgaoEmissor" class="form-label">Orgão emissor<span class="text-danger"> *</span></label>
+          <input th:field="*{orgao_emissor}" th:errorclass="is-invalid" type="text" class="form-control" />
+          <div th:errors="*{orgao_emissor}" class="invalid-feedback">
+            erro do orgão emissor
+          </div>
+        </div>   
+        
+        <div class="col-6 mt-4 mb-4">
+          <label for"numeroCTPS" class="form-label">Número CTPS<span class="text-danger"> *</span></label>
+          <input th:field="*{numero_CTPS}" th:errorclass="is-invalid" type="text" class="form-control" />
+          <div th:errors="*{numero_CTPS}" class="invalid-feedback">
+           erros do numero CTPS
+          </div>
+        </div>                 
+        
+        <div class="col-6 mt-4 mb-4">
+          <label for"numeroPIS" class="form-label">Número PIS<span class="text-danger"> *</span></label>
+          <input th:field="*{numero_pis}" th:errorclass="is-invalid" type="text" class="form-control" />
+          <div th:errors="*{numero_pis}" class="invalid-feedback">
+           erro do numero PIS
+          </div>
+        </div>          
+        
+        <div class="col-6 mt-4 mb-4">
+          <label for"telefone" class="form-label">Telefone<span class="text-danger"> *</span></label>
+          <input th:field="*{telefone}" th:errorclass="is-invalid" type="text" class="form-control" />
+          <div th:errors="*{telefone}" class="invalid-feedback">
+           erro do telefone
+          </div>
+        </div>   
+        
+         <div class="col-6 mt-4 mb-4">
+          <label for"celular" class="form-label">Celular<span class="text-danger"> *</span></label>
+          <input th:field="*{celular}" th:errorclass="is-invalid" type="text" class="form-control" />
+          <div th:errors="*{celular}" class="invalid-feedback">
+           erro do celular
+          </div>
+        </div>               
+        
+        <div class="col-md-3 mt-4">
+          <label for"cidade" class="form-label">Cidade<span class="text-danger"> *</span></label>
+          <input th:field="*{cidade}" th:errorclass="is-invalid" type="text" class="form-control" />
+          <div th:errors="*{cidade}" class="invalid-feedback">
+           erro da cidade
+          </div>
+        </div>
+        
+        <div class="col-md-3 mt-4">
+          <label for"estado" class="form-label">Estado<span class="text-danger"> *</span></label>
+          <input th:field="*{estado}" th:errorclass="is-invalid" type="text" class="form-control" />
+          <div th:errors="*{estado}" class="invalid-feedback">
+           erro do estado
+          </div>
+        </div>
+        
+         <div class="col-md-3 mt-4">
+          <label for"endereco" class="form-label">Endereço<span class="text-danger"> *</span></label>
+          <input th:field="*{endereco}" th:errorclass="is-invalid" type="text" class="form-control" />
+          <div th:errors="*{endereco}" class="invalid-feedback">
+           erro do endereco
+          </div>
+        </div>       
+ 
+        <div class="col-md-3 mt-4">
+          <label for"bairro" class="form-label">Bairro<span class="text-danger"> *</span></label>
+          <input th:field="*{bairro}" th:errorclass="is-invalid" type="text" class="form-control" />
+          <div th:errors="*{bairro}" class="invalid-feedback">
+           erro do bairro
+          </div>
+        </div>      
+        
+         <div class="col-md-12 mt-4">
+          <label for"bairro" class="form-label">Complemento<span class="text-danger"> *</span></label>
+          <input th:field="*{complemento}" th:errorclass="is-invalid" type="text" class="form-control" />
+          <div th:errors="*{complemento}" class="invalid-feedback">
+           erro do complemento
+          </div>
+        </div> 
+           
+	    <button type="submit" class="col-md-1 mb-4 btn btn-primary mt-4">SALVAR</button>              
+      </form>
+    </div>
+  </div>
+</body>
+</html>

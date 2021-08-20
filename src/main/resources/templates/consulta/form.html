@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<title>Insert title here</title>
+</head>
+<body>
+   <div class="container">
+     <div class="mt-4"><h1>Agendamento</h1></div>
+     <div class="card mt-3">
+      <form th:object="${requisicaoNovaConsulta}" class="card-body" action="/consulta/novo" method="POST"> 
+      
+	      <div class="form-group">
+	        <label for="nomePaciente">Nome do Paciente</label>
+	        <input th:field="*{nomePaciente}" th:errorclass="is-invalid" class="form-control" placeholder="Ex: Lucas" />
+	        <small>Por-favor informe o nome do paciente.</small>
+	        <div th:errors="*{nomePaciente}" class="invalid-feedback" >
+	           Campo em branco
+	        </div>
+	      </div>
+	     
+	      <div class="form-group">
+	        <label for="nomeMedico">Nome do Médico</label>
+	        <input th:field="*{nomeMedico}" th:errorclass="is-invalid" class="form-control"  placeholder="Ex: Doutor Alex" />
+	        <small>Por-favor informe o nome do Médico.</small>
+	        <div th:errors="*{nomeMedico}" class="invalid-feedback">
+	          erros médico
+	        </div>
+	      </div>
+	      
+	      <div class="form-group">
+	        <label for="dataAtendimento">Data</label>
+	        <input th:field="*{dataAtendimento}" th:errorclass="is-invalid" class="form-control" placeholder="19/08/2021" />
+	        <small>Por-favor, informe a data da consulta.</small>
+	        <div th:error="*{dataAtendimento}" class="invalid-feedback">
+	          erros data
+	        </div>
+	      </div>
+	     
+	      <div class="form-group">
+	        <label for="descricao">Descrição</label>
+	        <textarea th:field="*{descricao}" class="form-control" placeholder="..."></textarea>
+	        <small>Por-favor, informe uma descrição.</small>
+	      </div>
+	      <button type="submit" class="btn btn-primary mt-4">SALVAR</button>
+      </form>
+     </div>
+   </div>
+
+</body>
+</html>

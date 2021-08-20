@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+<title>Funcionários</title>
+</head>
+<body>
+    <div class="container">
+      <div class="jumbotron">
+         <h1>Modulo de Funcionários</h1>
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between mb-3">
+        <div class="navbar-nav">
+            <a href="/" class="nav-link active">Home</a>
+	        <a href="/consulta" class="nav-link" >Agendamento</a>
+	        <a href="/funcionario" class="nav-link">Funcionário</a>
+        </div>
+          <a  href="/funcionario/formFun"><button class="btn btn-outline-secondary my-2 my-sm-0" >Novo</button></a>
+      </nav>
+      
+      <div class="card" th:each="funcionario : ${funcionarios}">
+           <div class="card-header">Funcionários</div>
+           <div class="card-body">
+             <div class="row">
+                <div class="col-12 col-sm-8 mb-3">
+                  <div class="row">
+                  </div>
+                  <div>Nome:  <span th:text="${funcionario.nome}"></span> </div>
+	              <div>RG: <span th:text="${funcionario.rg}"></span></div>
+	              <div>CPF: <span th:text="${funcionario.cpf}"></span> </div>
+	              <div>Celular: <span th:text="${funcionario.celular}"></span></div>
+	              <div>Telefone: <span th:text="${funcionario.telefone}"></span></div>
+	              <div>Cidade: <span th:text="${funcionario.cidade}"></span></div>
+	              <div>Estado: <span th:text="${funcionario.estado}"></span></div>
+	              <div>Endereço: <span th:text="${funcionario.endereco}"></span></div>
+	              <div>Complemento: <span th:text="${funcionario.complemento}"></span></div>
+	              <div>CTPS:    <span th:text="${funcionario.numero_CTPS}"></span></div>
+	              <div>PIS: <span th:text="${funcionario.numero_pis}"></span></div>
+	              
+                </div>
+             </div>
+           </div>
+	  </div>
+    </div>
+</body>
+</html>
